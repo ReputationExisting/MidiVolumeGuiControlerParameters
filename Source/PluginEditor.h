@@ -18,7 +18,7 @@ class SimpleGUIControlAudioProcessorEditor  : public juce::AudioProcessorEditor
 {
 public:
     SimpleGUIControlAudioProcessorEditor (SimpleGUIControlAudioProcessor&);
-    ~SimpleGUIControlAudioProcessorEditor() override;
+    ~SimpleGUIControlAudioProcessorEditor();
 
     //==============================================================================
     void paint (juce::Graphics&) override;
@@ -28,6 +28,8 @@ private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     SimpleGUIControlAudioProcessor& audioProcessor;
+    
+    juce::Slider midiVolume;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (SimpleGUIControlAudioProcessorEditor)
 };
