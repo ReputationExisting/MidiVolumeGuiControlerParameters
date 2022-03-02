@@ -55,4 +55,5 @@ void SimpleGUIControlAudioProcessorEditor::resized()
     
     //sets the position and size of the slider with arguments (x, y, width, height)
     midiVolume.setBounds (40, 30, 20, getHeight() - 60);
+    midiVolume.addListener (this);
 }
