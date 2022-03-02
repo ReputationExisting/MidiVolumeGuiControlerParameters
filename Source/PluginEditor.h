@@ -14,7 +14,8 @@
 //==============================================================================
 /**
 */
-class SimpleGUIControlAudioProcessorEditor  : public juce::AudioProcessorEditor
+class SimpleGUIControlAudioProcessorEditor  : public juce::AudioProcessorEditor,
+                                              private juce::Slider::Listener
 {
 public:
     SimpleGUIControlAudioProcessorEditor (SimpleGUIControlAudioProcessor&);
@@ -25,6 +26,10 @@ public:
     void resized() override;
 
 private:
+    void sliderValueChanged (juce::Slider* slider) override
+    {
+        audioProcessor.noteOnVel = midiVolume.getValue();
+    };
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     SimpleGUIControlAudioProcessor& audioProcessor;

@@ -19,6 +19,7 @@ public:
     //==============================================================================
     SimpleGUIControlAudioProcessor();
     ~SimpleGUIControlAudioProcessor() override;
+    float noteOnVel;
 
     //==============================================================================
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
